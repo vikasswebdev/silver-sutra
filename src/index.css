@@ -1,0 +1,543 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: 253 252 251;
+  --color-foreground: 61 61 61;
+  --color-card: 254 254 254;
+  --color-card-foreground: 61 61 61;
+  --color-popover: 254 254 254;
+  --color-popover-foreground: 61 61 61;
+  --color-primary: 228 198 120;
+  --color-primary-foreground: 61 61 61;
+  --color-secondary: 244 237 224;
+  --color-secondary-foreground: 61 61 61;
+  --color-muted: 248 244 237;
+  --color-muted-foreground: 79 79 79;
+  --color-accent: 217 125 125;
+  --color-accent-foreground: 254 254 254;
+  --color-destructive: 0 84.2% 60.2%;
+  --color-destructive-foreground: 254 254 254;
+  --color-border: 232 220 199;
+  --color-input: 232 220 199;
+  --color-ring: 228 198 120;
+  --radius: 0.5rem;
+}
+
+@theme dark {
+  --color-background: 61 61 61;
+  --color-foreground: 254 254 254;
+  --color-card: 61 61 61;
+  --color-card-foreground: 254 254 254;
+  --color-popover: 61 61 61;
+  --color-popover-foreground: 254 254 254;
+  --color-primary: 228 198 120;
+  --color-primary-foreground: 61 61 61;
+  --color-secondary: 79 79 79;
+  --color-secondary-foreground: 254 254 254;
+  --color-muted: 79 79 79;
+  --color-muted-foreground: 176 176 176;
+  --color-accent: 217 125 125;
+  --color-accent-foreground: 254 254 254;
+  --color-destructive: 0 62.8% 30.6%;
+  --color-destructive-foreground: 254 254 254;
+  --color-border: 79 79 79;
+  --color-input: 79 79 79;
+  --color-ring: 228 198 120;
+}
+
+/* Silver Sutra luxury design system */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply font-serif;
+  }
+}
+
+@layer utilities {
+
+  /* Champagne Color Palette */
+  .text-champagne-50 {
+    color: rgb(255 253 248);
+  }
+
+  .text-champagne-100 {
+    color: rgb(254 251 242);
+  }
+
+  .text-champagne-200 {
+    color: rgb(252 245 230);
+  }
+
+  .text-champagne-300 {
+    color: rgb(248 235 210);
+  }
+
+  .text-champagne-400 {
+    color: rgb(242 220 180);
+  }
+
+  .text-champagne-500 {
+    color: rgb(234 200 140);
+  }
+
+  .text-champagne-600 {
+    color: rgb(226 180 100);
+  }
+
+  .text-champagne-700 {
+    color: rgb(218 160 80);
+  }
+
+  .text-champagne-800 {
+    color: rgb(210 140 60);
+  }
+
+  .text-champagne-900 {
+    color: rgb(202 120 40);
+  }
+
+  .text-champagne-950 {
+    color: rgb(194 100 20);
+  }
+
+  .bg-champagne-50 {
+    background-color: rgb(255 253 248);
+  }
+
+  .bg-champagne-100 {
+    background-color: rgb(254 251 242);
+  }
+
+  .bg-champagne-200 {
+    background-color: rgb(252 245 230);
+  }
+
+  .bg-champagne-300 {
+    background-color: rgb(248 235 210);
+  }
+
+  .bg-champagne-400 {
+    background-color: rgb(242 220 180);
+  }
+
+  .bg-champagne-500 {
+    background-color: rgb(234 200 140);
+  }
+
+  .bg-champagne-600 {
+    background-color: rgb(226 180 100);
+  }
+
+  .bg-champagne-700 {
+    background-color: rgb(218 160 80);
+  }
+
+  .bg-champagne-800 {
+    background-color: rgb(210 140 60);
+  }
+
+  .bg-champagne-900 {
+    background-color: rgb(202 120 40);
+  }
+
+  .bg-champagne-950 {
+    background-color: rgb(194 100 20);
+  }
+
+  .border-champagne-50 {
+    border-color: rgb(255 253 248);
+  }
+
+  .border-champagne-100 {
+    border-color: rgb(254 251 242);
+  }
+
+  .border-champagne-200 {
+    border-color: rgb(252 245 230);
+  }
+
+  .border-champagne-300 {
+    border-color: rgb(248 235 210);
+  }
+
+  .border-champagne-400 {
+    border-color: rgb(242 220 180);
+  }
+
+  .border-champagne-500 {
+    border-color: rgb(234 200 140);
+  }
+
+  .border-champagne-600 {
+    border-color: rgb(226 180 100);
+  }
+
+  .border-champagne-700 {
+    border-color: rgb(218 160 80);
+  }
+
+  .border-champagne-800 {
+    border-color: rgb(210 140 60);
+  }
+
+  .border-champagne-900 {
+    border-color: rgb(202 120 40);
+  }
+
+  .border-champagne-950 {
+    border-color: rgb(194 100 20);
+  }
+
+  /* Charcoal Color Palette */
+  .text-charcoal-50 {
+    color: rgb(250 250 250);
+  }
+
+  .text-charcoal-100 {
+    color: rgb(245 245 245);
+  }
+
+  .text-charcoal-200 {
+    color: rgb(235 235 235);
+  }
+
+  .text-charcoal-300 {
+    color: rgb(220 220 220);
+  }
+
+  .text-charcoal-400 {
+    color: rgb(200 200 200);
+  }
+
+  .text-charcoal-500 {
+    color: rgb(180 180 180);
+  }
+
+  .text-charcoal-600 {
+    color: rgb(140 140 140);
+  }
+
+  .text-charcoal-700 {
+    color: rgb(100 100 100);
+  }
+
+  .text-charcoal-800 {
+    color: rgb(60 60 60);
+  }
+
+  .text-charcoal-900 {
+    color: rgb(40 40 40);
+  }
+
+  .text-charcoal-950 {
+    color: rgb(20 20 20);
+  }
+
+  .bg-charcoal-50 {
+    background-color: rgb(250 250 250);
+  }
+
+  .bg-charcoal-100 {
+    background-color: rgb(245 245 245);
+  }
+
+  .bg-charcoal-200 {
+    background-color: rgb(235 235 235);
+  }
+
+  .bg-charcoal-300 {
+    background-color: rgb(220 220 220);
+  }
+
+  .bg-charcoal-400 {
+    background-color: rgb(200 200 200);
+  }
+
+  .bg-charcoal-500 {
+    background-color: rgb(180 180 180);
+  }
+
+  .bg-charcoal-600 {
+    background-color: rgb(140 140 140);
+  }
+
+  .bg-charcoal-700 {
+    background-color: rgb(100 100 100);
+  }
+
+  .bg-charcoal-800 {
+    background-color: rgb(60 60 60);
+  }
+
+  .bg-charcoal-900 {
+    background-color: rgb(40 40 40);
+  }
+
+  .bg-charcoal-950 {
+    background-color: rgb(20 20 20);
+  }
+
+  .border-charcoal-50 {
+    border-color: rgb(250 250 250);
+  }
+
+  .border-charcoal-100 {
+    border-color: rgb(245 245 245);
+  }
+
+  .border-charcoal-200 {
+    border-color: rgb(235 235 235);
+  }
+
+  .border-charcoal-300 {
+    border-color: rgb(220 220 220);
+  }
+
+  .border-charcoal-400 {
+    border-color: rgb(200 200 200);
+  }
+
+  .border-charcoal-500 {
+    border-color: rgb(180 180 180);
+  }
+
+  .border-charcoal-600 {
+    border-color: rgb(140 140 140);
+  }
+
+  .border-charcoal-700 {
+    border-color: rgb(100 100 100);
+  }
+
+  .border-charcoal-800 {
+    border-color: rgb(60 60 60);
+  }
+
+  .border-charcoal-900 {
+    border-color: rgb(40 40 40);
+  }
+
+  .border-charcoal-950 {
+    border-color: rgb(20 20 20);
+  }
+
+  /* Ivory Color Palette */
+  .text-ivory-50 {
+    color: rgb(255 255 254);
+  }
+
+  .text-ivory-100 {
+    color: rgb(254 254 252);
+  }
+
+  .text-ivory-200 {
+    color: rgb(252 252 248);
+  }
+
+  .text-ivory-300 {
+    color: rgb(250 250 244);
+  }
+
+  .text-ivory-400 {
+    color: rgb(248 248 240);
+  }
+
+  .text-ivory-500 {
+    color: rgb(246 246 236);
+  }
+
+  .text-ivory-600 {
+    color: rgb(244 244 232);
+  }
+
+  .text-ivory-700 {
+    color: rgb(242 242 228);
+  }
+
+  .text-ivory-800 {
+    color: rgb(240 240 224);
+  }
+
+  .text-ivory-900 {
+    color: rgb(238 238 220);
+  }
+
+  .text-ivory-950 {
+    color: rgb(236 236 216);
+  }
+
+  .bg-ivory-50 {
+    background-color: rgb(255 255 254);
+  }
+
+  .bg-ivory-100 {
+    background-color: rgb(254 254 252);
+  }
+
+  .bg-ivory-200 {
+    background-color: rgb(252 252 248);
+  }
+
+  .bg-ivory-300 {
+    background-color: rgb(250 250 244);
+  }
+
+  .bg-ivory-400 {
+    background-color: rgb(248 248 240);
+  }
+
+  .bg-ivory-500 {
+    background-color: rgb(246 246 236);
+  }
+
+  .bg-ivory-600 {
+    background-color: rgb(244 244 232);
+  }
+
+  .bg-ivory-700 {
+    background-color: rgb(242 242 228);
+  }
+
+  .bg-ivory-800 {
+    background-color: rgb(240 240 224);
+  }
+
+  .bg-ivory-900 {
+    background-color: rgb(238 238 220);
+  }
+
+  .bg-ivory-950 {
+    background-color: rgb(236 236 216);
+  }
+
+  .border-ivory-50 {
+    border-color: rgb(255 255 254);
+  }
+
+  .border-ivory-100 {
+    border-color: rgb(254 254 252);
+  }
+
+  .border-ivory-200 {
+    border-color: rgb(252 252 248);
+  }
+
+  .border-ivory-300 {
+    border-color: rgb(250 250 244);
+  }
+
+  .border-ivory-400 {
+    border-color: rgb(248 248 240);
+  }
+
+  .border-ivory-500 {
+    border-color: rgb(246 246 236);
+  }
+
+  .border-ivory-600 {
+    border-color: rgb(244 244 232);
+  }
+
+  .border-ivory-700 {
+    border-color: rgb(242 242 228);
+  }
+
+  .border-ivory-800 {
+    border-color: rgb(240 240 224);
+  }
+
+  .border-ivory-900 {
+    border-color: rgb(238 238 220);
+  }
+
+  .border-ivory-950 {
+    border-color: rgb(236 236 216);
+  }
+}
+
+@layer components {
+  .luxury-gradient {
+    background: linear-gradient(135deg, rgb(244 237 224) 0%, rgb(228 198 120) 100%);
+  }
+
+  .text-gradient {
+    background: linear-gradient(135deg, rgb(228 198 120) 0%, rgb(212 177 70) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-effect {
+    backdrop-filter: blur(10px);
+    background: rgba(254, 254, 254, 0.8);
+  }
+
+  .hover-lift {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Animation Classes */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out;
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 1s ease-out;
+  }
+
+  .animate-slide-in-right {
+    animation: slideInRight 1s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideInRight {
+    from {
+      opacity: 0;
+      transform: translateX(30px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
