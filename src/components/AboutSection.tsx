@@ -31,8 +31,10 @@ const AboutSection = () => {
                                 <span className="text-champagne-600 font-bold">SS</span>
                             </div>
                             <div>
-                                <div className="font-semibold text-charcoal-900">Sophia Sterling</div>
-                                <div className="text-sm text-charcoal-600">Founder & Cultural Wedding Specialist</div>
+                                <div className="font-semibold text-charcoal-900">Lovesh Prihar</div>
+                                <div onClick={() => {
+                                    window.open("tel:+91 81077 27066", "_blank");
+                                }} className="text-sm text-charcoal-600">+91 81077 27066</div>
                             </div>
                         </div>
                     </div>

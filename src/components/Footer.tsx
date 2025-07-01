@@ -17,7 +17,7 @@ const Footer = () => {
         contact: [
             { name: "Beverly Hills Studio", href: "#contact" },
             { name: "hello@silversutra.com", href: "mailto:hello@silversutra.com" },
-            { name: "(555) 123-4567", href: "tel:+15551234567" },
+            { name: "+91 81077 27066", href: "tel:+91 81077 27066" },
             { name: "Schedule Consultation", href: "#contact" }
         ]
     };
@@ -35,17 +35,14 @@ const Footer = () => {
                             Where luxury meets legacy. Creating extraordinary wedding experiences that celebrate your unique love story with unparalleled elegance and sophistication.
                         </p>
                         <div className="flex space-x-4">
-                            <a href="#" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
+                            <a href="https://www.facebook.com/share/1YLVqXACSN/" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
                                 <span className="text-champagne-400 text-sm font-bold">f</span>
                             </a>
-                            <a href="#" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
+                            <a href="https://www.instagram.com/silversutra_/" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
                                 <span className="text-champagne-400 text-sm font-bold">@</span>
                             </a>
-                            <a href="#" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
-                                <span className="text-champagne-400 text-sm font-bold">in</span>
-                            </a>
-                            <a href="#" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
-                                <span className="text-champagne-400 text-sm font-bold">p</span>
+                            <a href="https://x.com/silver_sutra" className="w-10 h-10 bg-champagne-500 bg-opacity-20 rounded-full flex items-center justify-center hover:bg-opacity-30 transition-colors duration-300">
+                                <span className="text-champagne-400 text-sm font-bold">x</span>
                             </a>
                         </div>
                     </div>

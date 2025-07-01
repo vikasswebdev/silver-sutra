@@ -1,4 +1,21 @@
 import { useState } from "react";
+import wedding1 from "@/assets/wedding/wed-1.jpg";
+import wedding2 from "@/assets/wedding/wed-2.jpg";
+import wedding3 from "@/assets/wedding/wed-3.jpg";
+import wedding4 from "@/assets/wedding/wed-4.jpg";
+import wedding5 from "@/assets/wedding/wed-5.jpg";
+import wedding6 from "@/assets/wedding/wed-6.jpg";
+import wedding7 from "@/assets/wedding/wed-7.jpg";
+import wedding8 from "@/assets/wedding/wed-8.jpg";
+import wedding9 from "@/assets/wedding/wed-9.jpg";
+import wedding10 from "@/assets/wedding/wed-10.jpg";
+import wedding11 from "@/assets/wedding/wed-11.jpg";
+import wedding12 from "@/assets/wedding/wed-12.jpg";
+import wedding13 from "@/assets/wedding/wed-13.jpg";
+import wedding14 from "@/assets/wedding/wed-14.jpg";
+import wedding15 from "@/assets/wedding/wed-15.jpg";
+import wedding16 from "@/assets/wedding/wed-16.jpg";
+
 
 const PortfolioSection = () => {
     const [selectedCategory, setSelectedCategory] = useState("all");
@@ -15,45 +32,117 @@ const PortfolioSection = () => {
             id: 1,
             title: "Ethereal Garden Romance",
             category: "luxury",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
+            image: wedding1,
             description: "A breathtaking celebration with artistic floral sculptures"
         },
         {
             id: 2,
             title: "Cultural Elegance",
             category: "cultural",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
+            image: wedding2,
             description: "Traditional celebration with modern luxury touches"
         },
         {
             id: 3,
             title: "Pink & Orange Splendor",
             category: "vibrant",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
+            image: wedding3,
             description: "Vibrant colors creating unforgettable memories"
         },
         {
             id: 4,
             title: "Rainbow Rush Celebration",
             category: "vibrant",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
+            image: wedding4,
             description: "A kaleidoscope of colors and joyous celebration"
         },
         {
             id: 5,
             title: "Metropolitan Grandeur",
             category: "luxury",
-            image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop",
+            image: wedding5,
             description: "Urban sophistication meets classic elegance"
         },
         {
             id: 6,
             title: "Historic Estate Romance",
             category: "luxury",
-            image: "https://images.unsplash.com/photo-1551038247-3d9af20df552?w=600&h=400&fit=crop",
+            image: wedding6,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 7,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding7,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 8,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding8,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 9,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding9,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 10,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding10,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 11,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding11,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 12,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding12,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 13,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding13,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 14,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding14,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 15,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding15,
+            description: "Timeless elegance in a heritage setting"
+        },
+        {
+            id: 16,
+            title: "Vintage Charm",
+            category: "luxury",
+            image: wedding16,
             description: "Timeless elegance in a heritage setting"
         }
+
     ];
+
 
     const filteredItems = selectedCategory === "all"
         ? portfolioItems
@@ -111,12 +200,12 @@ const PortfolioSection = () => {
                         </div>
                     ))}
                 </div>
-
+                {/* 
                 <div className="text-center mt-16">
                     <button className="bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
                         View Complete Portfolio
                     </button>
-                </div>
+                </div> */}
             </div>
         </section>
     );

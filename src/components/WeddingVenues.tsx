@@ -7,46 +7,66 @@ import {
     CarouselNext,
 } from './ui/carousel';
 import { Button } from './ui/button';
+import { sendWeddingEnquiryEmail } from '@/lib/emailjs';
+import { useToast } from '@/hooks/use-toast';
 
 const venues = [
     {
         name: 'The Oberoi Udaivilas',
-        image: '/src/assets/amish-thakkar-7O422yG_b80-unsplash.jpg',
+        image: 'https://www.oberoihotels.com/-/media/oberoi-hotels/website-images/the-oberoi-udaivilas-udaipur/overview/overview-banners/1920-x-819-new.jpg?extension=webp',
+        url: 'https://www.oberoihotels.com/hotels-in-udaipur-udaivilas-resort/',
     },
     {
         name: 'Taj Lalit Bagh',
-        image: '/src/assets/amish-thakkar-BEdxXAiRfRM-unsplash.jpg',
+        image: 'https://cdn.sanity.io/images/ocl5w36p/prod5/7fd8a372c3f5a0b32c4ee6709362090bd40805d8-7360x4912.jpg',
+        url: 'https://www.tajhotels.com/en-in/destination/hotels-in-udaipur',
     },
     {
         name: 'Holymont Udaipur',
-        image: '/src/assets/jayesh-jalodara-bWQ6-0c_ZcM-unsplash.jpg',
-    },
-    {
-        name: 'The Oberoi Udaivilas',
-        image: '/src/assets/amish-thakkar-7O422yG_b80-unsplash.jpg',
-    },
-    {
-        name: 'Taj Lalit Bagh',
-        image: '/src/assets/amish-thakkar-BEdxXAiRfRM-unsplash.jpg',
-    },
-    {
-        name: 'Holymont Udaipur',
-        image: '/src/assets/jayesh-jalodara-bWQ6-0c_ZcM-unsplash.jpg',
+        image: 'https://r2imghtlak.mmtcdn.com/r2-mmt-htl-image/htl-imgs/202409152034538052-df756af2-85d6-4d5a-926c-fecf2b0a3e54.jpg',
+        url: 'https://www.makemytrip.com/hotels/holymont_udaipur-details-udaipur.html',
     },
 ];
 
 const WeddingVenues = () => {
     const [form, setForm] = useState({ name: '', email: '', mobile: '', message: '' });
+    const [isSubmitting, setIsSubmitting] = useState(false);
+    const { toast } = useToast();
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        // Handle form submission (e.g., send to API)
-        alert('Enquiry submitted!');
-        setForm({ name: '', email: '', mobile: '', message: '' });
+        setIsSubmitting(true);
+
+        try {
+            const result = await sendWeddingEnquiryEmail(form);
+
+            if (result.success) {
+                toast({
+                    title: "Enquiry submitted successfully!",
+                    description: "We'll be in touch within 24 hours to discuss your wedding plans.",
+                });
+                setForm({ name: '', email: '', mobile: '', message: '' });
+            } else {
+                toast({
+                    title: "Something went wrong",
+                    description: "Please try again or contact us directly at hello@silversutra.com",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            toast({
+                title: "Something went wrong",
+                description: "Please try again or contact us directly at hello@silversutra.com",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     return (
@@ -60,8 +80,8 @@ const WeddingVenues = () => {
                     <div className="relative">
                         <Carousel className="w-full">
                             <CarouselContent className="">
-                                {venues.map((venue, idx) => (
-                                    <CarouselItem key={venue.name} className="basis-1/1 md:basis-1/2 lg:basis-1/3 px-2">
+                                {venues.map((venue) => (
+                                    <CarouselItem key={venue.name} className="basis-1/1 md:basis-1/2 lg:basis-1/3 px-2" onClick={() => window.open(venue.url, '_blank')}>
                                         <div className="bg-charcoal-800 rounded-3xl overflow-hidden shadow-xl hover-lift transition-all duration-300 flex flex-col items-center">
                                             <img
                                                 src={venue.image}
@@ -138,9 +158,10 @@ const WeddingVenues = () => {
                         />
                         <Button
                             type="submit"
-                            className="bg-charcoal-900 hover:bg-charcoal-800 text-champagne-400 text-xl font-bold py-3 rounded-md mt-2 transition-all duration-300"
+                            disabled={isSubmitting}
+                            className="bg-charcoal-900 hover:bg-charcoal-800 text-champagne-400 text-xl font-bold py-3 rounded-md mt-2 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
                         >
-                            SUBMIT
+                            {isSubmitting ? "SENDING..." : "SUBMIT"}
                         </Button>
                     </form>
                 </div>

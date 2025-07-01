@@ -1,28 +1,28 @@
 const BlogSection = () => {
     const blogPosts = [
         {
-            title: "2024 Luxury Wedding Trends: Timeless Elegance Meets Modern Innovation",
-            excerpt: "Discover the emerging trends that are defining luxury weddings this year, from sustainable luxury to intimate grandeur.",
-            image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop",
+            title: "Intimate Luxury: The Rise of Micro-Weddings with Maximum Impact",
+            excerpt: "Smaller guest lists don't mean smaller dreams. Explore how couples are creating intimate celebrations that pack an emotional punch while maintaining the luxury experience they deserve.",
+            image: "https://images.unsplash.com/photo-1505932794465-147d1f1b2c97?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             category: "Trends",
-            readTime: "5 min read",
-            date: "March 15, 2024"
+            readTime: "4 min read",
+            date: "February 20, 2024"
         },
         {
-            title: "Behind the Scenes: Creating a Destination Wedding in Tuscany",
-            excerpt: "Take an exclusive look at the planning process for an enchanting Italian villa wedding that captured hearts worldwide.",
-            image: "https://images.unsplash.com/photo-1492321936769-b49830bc1d1e?w=400&h=300&fit=crop",
-            category: "Behind the Scenes",
-            readTime: "8 min read",
-            date: "March 8, 2024"
+            title: "Sustainable Luxury: How Eco-Conscious Choices Enhance Your Wedding",
+            excerpt: "Luxury and sustainability can coexist beautifully. Discover how thoughtful choices in decor, catering, and venue selection can create a celebration that's both stunning and environmentally responsible.",
+            image: "https://images.unsplash.com/photo-1583878545126-2f1ca0142714?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+            category: "Sustainability",
+            readTime: "7 min read",
+            date: "February 12, 2024"
         },
         {
-            title: "The Art of Floral Design: Creating Breathtaking Wedding Arrangements",
-            excerpt: "Learn about our approach to floral design and how we create arrangements that perfectly complement your wedding vision.",
-            image: "https://images.unsplash.com/photo-1465146344425-f00d5f5c8f07?w=400&h=300&fit=crop",
+            title: "The Psychology of Wedding Design: Creating Emotional Connections",
+            excerpt: "Every design choice in your wedding should evoke emotion and create lasting memories. Learn how color psychology, lighting, and spatial design work together to craft an unforgettable experience.",
+            image: "https://images.unsplash.com/photo-1610173826608-bd1f53a52db1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
             category: "Design",
             readTime: "6 min read",
-            date: "February 28, 2024"
+            date: "February 5, 2024"
         }
     ];
 
@@ -35,7 +35,7 @@ const BlogSection = () => {
                         Insights & Inspiration
                     </h2>
                     <p className="text-xl text-charcoal-700 max-w-3xl mx-auto leading-relaxed">
-                        Explore our thoughts on luxury wedding trends, behind-the-scenes insights, and expert tips for creating unforgettable celebrations.
+                        Explore our thoughts on luxury wedding trends, behind-the-scenes insights, and expert tips for creating unforgettable celebrations that reflect your unique love story.
                     </p>
                 </div>
 
@@ -46,7 +46,7 @@ const BlogSection = () => {
                             className="group cursor-pointer animate-fade-in-up"
                             style={{ animationDelay: `${index * 0.1}s` }}
                         >
-                            <div className="bg-white rounded-lg overflow-hidden hover-lift">
+                            <div className="bg-white rounded-lg overflow-hidden hover-lift shadow-sm hover:shadow-lg transition-all duration-300">
                                 <div className="aspect-[4/3] relative overflow-hidden">
                                     <img
                                         src={post.image}
@@ -61,11 +61,11 @@ const BlogSection = () => {
                                 </div>
 
                                 <div className="p-6">
-                                    <div className="flex items-center text-sm text-charcoal-500 mb-3">
+                                    {/* <div className="flex items-center text-sm text-charcoal-500 mb-3">
                                         <span>{post.date}</span>
                                         <span className="mx-2">•</span>
                                         <span>{post.readTime}</span>
-                                    </div>
+                                    </div> */}
 
                                     <h3 className="font-playfair text-xl font-bold text-charcoal-900 mb-3 group-hover:text-champagne-700 transition-colors duration-300 line-clamp-2">
                                         {post.title}
@@ -74,24 +74,24 @@ const BlogSection = () => {
                                     <p className="text-charcoal-600 leading-relaxed mb-4 line-clamp-3">
                                         {post.excerpt}
                                     </p>
-
+                                    {/* 
                                     <div className="flex items-center text-champagne-600 font-semibold text-sm group-hover:text-champagne-700 transition-colors duration-300">
                                         Read More
                                         <svg className="w-4 h-4 ml-2 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                                         </svg>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </article>
                     ))}
                 </div>
-
+                {/* 
                 <div className="text-center mt-16">
-                    <button className="bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105">
+                    <button className="bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold px-8 py-3 rounded-full transition-all duration-300 hover:scale-105 shadow-md hover:shadow-lg">
                         View All Articles
                     </button>
-                </div>
+                </div> */}
             </div>
         </section>
     );

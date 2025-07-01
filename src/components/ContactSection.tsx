@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
+import { sendContactFormEmail } from "@/lib/emailjs";
 
 const ContactSection = () => {
     const [formData, setFormData] = useState({
@@ -14,24 +15,48 @@ const ContactSection = () => {
         message: ""
     });
 
+    const [isSubmitting, setIsSubmitting] = useState(false);
     const { toast } = useToast();
 
-    const handleSubmit = (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        toast({
-            title: "Thank you for your inquiry!",
-            description: "We'll be in touch within 24 hours to begin planning your extraordinary celebration.",
-        });
-        setFormData({
-            name: "",
-            email: "",
-            phone: "",
-            eventDate: "",
-            guestCount: "",
-            budget: "",
-            venue: "",
-            message: ""
-        });
+        setIsSubmitting(true);
+
+        try {
+            const result = await sendContactFormEmail(formData);
+
+            if (result.success) {
+                toast({
+                    title: "Thank you for your inquiry!",
+                    description: "We'll be in touch within 24 hours to begin planning your extraordinary celebration.",
+                });
+                setFormData({
+                    name: "",
+                    email: "",
+                    phone: "",
+                    eventDate: "",
+                    guestCount: "",
+                    budget: "",
+                    venue: "",
+                    message: ""
+                });
+            } else {
+                toast({
+                    title: "Something went wrong",
+                    description: "Please try again or contact us directly at hello@silversutra.com",
+                    variant: "destructive",
+                });
+            }
+        } catch (error) {
+            console.error('Form submission error:', error);
+            toast({
+                title: "Something went wrong",
+                description: "Please try again or contact us directly at hello@silversutra.com",
+                variant: "destructive",
+            });
+        } finally {
+            setIsSubmitting(false);
+        }
     };
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -65,7 +90,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Studio Location</h3>
-                                    <p className="text-charcoal-700">Beverly Hills, California</p>
+                                    <p className="text-charcoal-700">Udaipur, Rajasthan</p>
                                     <p className="text-charcoal-600 text-sm">Available worldwide for destination events</p>
                                 </div>
                             </div>
@@ -79,7 +104,9 @@ const ContactSection = () => {
                                 <div>
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Get In Touch</h3>
                                     <p className="text-charcoal-700">hello@silversutra.com</p>
-                                    <p className="text-charcoal-700">(555) 123-4567</p>
+                                    <p onClick={() => {
+                                        window.open("tel:+91 81077 27066", "_blank");
+                                    }} className="text-charcoal-700">+91 81077 27066</p>
                                 </div>
                             </div>
 
@@ -91,7 +118,7 @@ const ContactSection = () => {
                                 </div>
                                 <div>
                                     <h3 className="font-semibold text-charcoal-900 mb-1">Consultation Hours</h3>
-                                    <p className="text-charcoal-700">Monday - Friday: 9AM - 6PM PST</p>
+                                    <p className="text-charcoal-700">Monday - Friday: 9AM - 6PM IST</p>
                                     <p className="text-charcoal-600 text-sm">Weekend consultations by appointment</p>
                                 </div>
                             </div>
@@ -227,9 +254,10 @@ const ContactSection = () => {
 
                             <Button
                                 type="submit"
-                                className="w-full bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105"
+                                disabled={isSubmitting}
+                                className="w-full bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed"
                             >
-                                Send Inquiry
+                                {isSubmitting ? "Sending..." : "Send Inquiry"}
                             </Button>
 
                             <p className="text-sm text-charcoal-600 mt-4 text-center">

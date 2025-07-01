@@ -83,12 +83,18 @@ const HeroSection = () => {
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Button
+                            onClick={() => {
+                                window.location.href = "#portfolio";
+                            }}
                             size="lg"
                             className="bg-champagne-500 hover:bg-champagne-600 text-charcoal-900 font-semibold px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"
                         >
                             View Our Weddings
                         </Button>
                         <Button
+                            onClick={() => {
+                                window.location.href = "#contact";
+                            }}
                             size="lg"
                             variant="outline"
                             className="border-white text-white hover:bg-white hover:text-charcoal-900 font-semibold px-8 py-3 rounded-full text-lg transition-all duration-300 hover:scale-105"

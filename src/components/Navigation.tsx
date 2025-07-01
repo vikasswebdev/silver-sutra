@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const Navigation = () => {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -18,7 +19,7 @@ const Navigation = () => {
         { name: "About", href: "#about" },
         { name: "Services", href: "#services" },
         { name: "Portfolio", href: "#portfolio" },
-        { name: "Blog", href: "#blog" },
+        // { name: "Blog", href: "#blog" },
         { name: "Contact", href: "#contact" },
     ];
 
@@ -29,7 +30,7 @@ const Navigation = () => {
                 <div className="flex items-center justify-between">
                     <div className="flex items-center">
                         <img
-                            src="/lovable-uploads/00db1639-c0ac-45ce-956a-f0cf3cc2bf33.png"
+                            src={logo}
                             alt="Silver Sutra Logo"
                             className="h-12 md:h-16 w-auto"
                         />
